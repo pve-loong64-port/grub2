@@ -1,8 +1,7 @@
 Source: grub2
 Section: admin
 Priority: optional
-Maintainer: GRUB Maintainers <pkg-grub-devel@alioth-lists.debian.net>
-Uploaders: Felix Zielcke <fzielcke@z-51.de>, Jordi Mallach <jordi@debian.org>, Steve McIntyre <93sam@debian.org>, Julian Andres Klode <jak@debian.org>
+Maintainer: Proxmox Support Team <support@proxmox.com>
 Build-Depends: debhelper-compat (= 13),
  patchutils,
  python3,
@@ -777,3 +776,8 @@ Section: debian-installer
 Architecture: linux-any kfreebsd-any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: export GRUB filesystems using FUSE
+
+Package: proxmox-grub
+Architecture: any
+Depends: grub-efi-amd64 (= ${binary:Version}) | grub-efi-ia32 (= ${binary:Version}) | grub-efi-arm64 (= ${binary:Version})
+Description: Empty package to ensure Proxmox Grub packages are installed.
