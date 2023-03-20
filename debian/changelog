@@ -1,3 +1,9 @@
+grub2 (2.06-8.1+pmx1) bookworm; urgency=medium
+
+  * Rebuild for Proxmox
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 20 Mar 2023 11:12:22 +0100
+
 grub2 (2.06-8.1) experimental; urgency=medium
 
   * Non-maintainer upload.
