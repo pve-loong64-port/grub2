@@ -1,3 +1,114 @@
+grub2 (2.06-13+deb12u1) bookworm-security; urgency=medium
+
+  [ Mate Kukri ]
+  * SECURITY UPDATE: Crafted file system images can cause out-of-bounds write
+    and may leak sensitive information into the GRUB pager.
+    - d/patches/ntfs-cve-fixes/fs-ntfs-Fix-an-OOB-read-when-parsing-a-volume-
+      label.patch:
+      fs/ntfs: Fix an OOB read when parsing a volume label
+    - d/patches/ntfs-cve-fixes/fs-ntfs-Fix-an-OOB-read-when-parsing-bs-for-
+      index-at.patch:
+      fs/ntfs: Fix an OOB read when parsing bitmaps for index attributes
+    - d/patches/ntfs-cve-fixes/fs-ntfs-Fix-an-OOB-read-when-parsing-dory-
+      entries-fr.patch:
+      fs/ntfs: Fix an OOB read when parsing directory entries from resident and
+      non-resident index attributes
+    - d/patches/ntfs-cve-fixes/fs-ntfs-Fix-an-OOB-read-when-reading-data-fhe-
+      reside.patch:
+      fs/ntfs: Fix an OOB read when reading data from the resident $DATA +
+      attribute
+    - CVE-2023-4693
+  * SECURITY UPDATE: Crafted file system images can cause heap-based buffer
+    overflow and may allow arbitrary code execution and secure boot bypass.
+    - d/patches/ntfs-cve-fixes/fs-ntfs-Fix-an-OOB-write-when-parsing-the-
+      ATTRIBUTE_LIST-.patch:
+      fs/ntfs: Fix an OOB write when parsing the $ATTRIBUTE_LIST attribute for
+      the $MFT file
+    - d/patches/ntfs-cve-fixes/fs-ntfs-Make-code-more-readable.patch
+      fs/ntfs: Make code more readable
+    - CVE-2023-4692
+
+  [ Julian Andres Klode ]
+  * Bump SBAT to grub,4
+
+ -- Julian Andres Klode <jak@debian.org>  Mon, 02 Oct 2023 16:11:34 +0200
+
+grub2 (2.06-13) unstable; urgency=medium
+
+  [ Steve McIntyre ]
+  * When *also* installing to the removable media path, include the
+    relevant mokmanager binary. Closes: #1034409
+
+  [ General Chaos ]
+  * Allow initrd to contain spaces. Closes: #838177, #820838.
+
+  [ Translators ]
+  * Update lots of translations of debconf templates, thanks to the
+    following:
+    + Welsh (Dafydd Tomos)
+    + German (Helge Kreutzmann). Closes: #1034850
+    + Croatian (Tomislav Krznar)
+    + Greek (Emmanuel Galatoulas)
+    + Esperanto (Felipe Castro)
+    + French (Baptiste Jammet). Closes: #1035761
+    + Italian (Luca Monducci). Closes: #1034825
+    + Kazakh (Baurzhan Muftakhidinov)
+    + Korean (Changwoo Ryu). Closes: #1034868
+    + Latvian (Rudolfs Mazurs)
+    + Dutch (Frans Spiesschaert). Closes: #1035399
+    + Norwegian Bokmål (Petter Reinholdtsen, Sverre Vaabenoe)
+    + Brazilian Portuguese (Adriano Rafael Gomes). Closes: #1035905
+    + Romanian (Remus-Gabriel Chelu)
+    + Russian (Yuri Kozlov). Closes: #1035294
+    + Turkish (Atila KOÇ). Closes: #1035846
+    + Swedish (Luna Jernberg)
+
+ -- Steve McIntyre <93sam@debian.org>  Sun, 23 Apr 2023 20:55:54 +0100
+
+grub2 (2.06-12) unstable; urgency=medium
+
+  * Fix up arm64 SB patch to fix build failure on 32-bit arm systems
+
+ -- Steve McIntyre <93sam@debian.org>  Fri, 21 Apr 2023 13:30:26 +0100
+
+grub2 (2.06-11) unstable; urgency=medium
+
+  * And try again... :-/
+
+ -- Steve McIntyre <93sam@debian.org>  Fri, 21 Apr 2023 01:50:26 +0100
+
+grub2 (2.06-10) unstable; urgency=medium
+
+  * Fix 32-bit build with the osdep/devmapper/getroot patches.
+
+ -- Steve McIntyre <93sam@debian.org>  Fri, 21 Apr 2023 01:14:13 +0100
+
+grub2 (2.06-9) unstable; urgency=medium
+
+  [ Steve McIntyre ]
+  * postinst: make config_item() more robust
+  * Add debconf logic for GRUB_DISABLE_OS_PROBER to make it easier to
+    control things here. Particularly useful for the installer.
+    Closes: #1031594, #1012865, #1025698.
+  * Add luks2 to the signed grub efi images. Closes: #1001248
+
+  [ Ben Hutchings ]
+  * Fix probing of LUKS2 devices (Closes: #1028301):
+    - disk/cryptodisk: When cheatmounting, use the sector info of the cheat
+      device
+    - osdep/devmapper/getroot: Have devmapper recognize LUKS2
+    - osdep/devmapper/getroot: Set up cheated LUKS2 cryptodisk mount from DM
+      parameters
+
+  [ Emanuele Rocca ]
+  * Add arm64-handover-to-kernel-if-sb-enabled.patch to fix Secure Boot on
+    arm64 (Closes: #1033657)
+
+  [ Mattia Rizzolo ]
+  * Don't warn about os-prober if it's not installed. Closes: #1020769
+
+ -- Steve McIntyre <93sam@debian.org>  Thu, 20 Apr 2023 20:35:11 +0100
+
 grub2 (2.06-8.1+pmx1) bookworm; urgency=medium
 
   * Rebuild for Proxmox
