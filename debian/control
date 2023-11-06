@@ -779,5 +779,7 @@ Description: export GRUB filesystems using FUSE
 
 Package: proxmox-grub
 Architecture: any
-Depends: grub-efi-amd64 (= ${binary:Version}) | grub-efi-ia32 (= ${binary:Version}) | grub-efi-arm64 (= ${binary:Version})
-Description: Empty package to ensure Proxmox Grub packages are installed.
+Depends: grub-efi-amd64 (= ${binary:Version}) | grub-efi-ia32 (= ${binary:Version}) | grub-efi-arm64 (= ${binary:Version}), grub-common (= ${binary:Version}), ${misc:Depends}
+Description: Empty package to ensure Proxmox Grub packages are installed
+ This package allows other Proxmox (meta) packages to depend on Proxmox Grub
+ packages.
