@@ -1,3 +1,9 @@
+grub2 (2.06-13+pmx2) bookworm; urgency=medium
+
+  * mkrescue: add opt-in quirk to support copying the shim for secure-boot
+
+ -- Proxmox Support Team <support@proxmox.com>  Fri, 19 Apr 2024 09:30:12 +0200
+
 grub2 (2.06-13+pmx1) bookworm; urgency=medium
 
   * update to 2.06-13+deb12u1 as base
