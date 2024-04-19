@@ -127,3 +127,4 @@ ntfs-cve-fixes/fs-ntfs-Fix-an-OOB-read-when-parsing-directory-entries-fr.patch
 ntfs-cve-fixes/fs-ntfs-Fix-an-OOB-read-when-parsing-bitmaps-for-index-at.patch
 ntfs-cve-fixes/fs-ntfs-Fix-an-OOB-read-when-parsing-a-volume-label.patch
 ntfs-cve-fixes/fs-ntfs-Make-code-more-readable.patch
+proxmox-mkrescue-install-signed-shim.patch
