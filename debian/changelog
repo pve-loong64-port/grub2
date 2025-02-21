@@ -1,3 +1,9 @@
+grub2 (2.06-13+pmx3) bookworm; urgency=medium
+
+  * backport 2025-02 CVE fixes
+
+ -- Proxmox Support Team <support@proxmox.com>  Fri, 21 Feb 2025 08:08:05 +0100
+
 grub2 (2.06-13+pmx2) bookworm; urgency=medium
 
   * mkrescue: add opt-in quirk to support copying the shim for secure-boot
