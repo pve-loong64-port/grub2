@@ -201,3 +201,6 @@ cve_2025_02_multiple/0201-kern-misc-Add-sanity-check-after-grub_strtoul-call.pat
 cve_2025_02_multiple/0202-loader-i386-linux-Cast-left-shift-to-grub_uint32_t.patch
 cve_2025_02_multiple/0203-loader-i386-bsd-Use-safe-math-to-avoid-underflow.patch
 cve_2025_02_multiple/0204-fs-ext2-Rework-out-of-bounds-read-for-inline-and-ext.patch
+cve_2025_02_multiple/0205-fs-xfs-Handle-root-inode-read-failure-in-grub_xfs_mo.patch
+cve_2025_02_multiple/0206-fs-xfs-Fix-grub_xfs_iterate_dir-return-value-in-case.patch
+cve_2025_02_multiple/0207-fs-xfs-Propagate-incorrect-inode-error-from-grub_xfs.patch
