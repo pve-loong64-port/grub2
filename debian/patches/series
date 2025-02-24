@@ -200,3 +200,4 @@ cve_2025_02_multiple/0200-kern-partition-Add-sanity-check-after-grub_strtoul-c.p
 cve_2025_02_multiple/0201-kern-misc-Add-sanity-check-after-grub_strtoul-call.patch
 cve_2025_02_multiple/0202-loader-i386-linux-Cast-left-shift-to-grub_uint32_t.patch
 cve_2025_02_multiple/0203-loader-i386-bsd-Use-safe-math-to-avoid-underflow.patch
+cve_2025_02_multiple/0204-fs-ext2-Rework-out-of-bounds-read-for-inline-and-ext.patch
