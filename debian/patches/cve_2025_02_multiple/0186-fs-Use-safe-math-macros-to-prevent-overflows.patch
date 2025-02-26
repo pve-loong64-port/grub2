@@ -314,10 +314,10 @@ index ccfa3ee..0ee9bb2 100644
  	    return 0;
  	  err = read_chunk (dir->data, buf,
 diff --git a/grub-core/fs/xfs.c b/grub-core/fs/xfs.c
-index 6de432b..cc50feb 100644
+index 3317dd3..4034062 100644
 --- a/grub-core/fs/xfs.c
 +++ b/grub-core/fs/xfs.c
-@@ -689,6 +689,7 @@ static char *
+@@ -695,6 +695,7 @@ static char *
  grub_xfs_read_symlink (grub_fshelp_node_t node)
  {
    grub_ssize_t size = grub_be_to_cpu64 (node->inode.size);
@@ -325,7 +325,7 @@ index 6de432b..cc50feb 100644
  
    if (size < 0)
      {
-@@ -710,7 +711,12 @@ grub_xfs_read_symlink (grub_fshelp_node_t node)
+@@ -716,7 +717,12 @@ grub_xfs_read_symlink (grub_fshelp_node_t node)
  	if (node->data->hascrc)
  	  off = 56;
  
@@ -339,7 +339,7 @@ index 6de432b..cc50feb 100644
  	if (!symlink)
  	  return 0;
  
-@@ -760,8 +766,15 @@ static int iterate_dir_call_hook (grub_uint64_t ino, const char *filename,
+@@ -766,8 +772,15 @@ static int iterate_dir_call_hook (grub_uint64_t ino, const char *filename,
  {
    struct grub_fshelp_node *fdiro;
    grub_err_t err;

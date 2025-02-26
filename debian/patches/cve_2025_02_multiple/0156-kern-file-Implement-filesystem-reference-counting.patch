@@ -366,10 +366,10 @@ index 4727266..7f72494 100644
    my_mod = mod;
  }
 diff --git a/grub-core/fs/xfs.c b/grub-core/fs/xfs.c
-index 1e7b7fa..6de432b 100644
+index 296ab55..3317dd3 100644
 --- a/grub-core/fs/xfs.c
 +++ b/grub-core/fs/xfs.c
-@@ -1246,6 +1246,7 @@ static struct grub_fs grub_xfs_fs =
+@@ -1277,6 +1277,7 @@ static struct grub_fs grub_xfs_fs =
  
  GRUB_MOD_INIT(xfs)
  {

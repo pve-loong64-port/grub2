@@ -26,10 +26,10 @@ Signed-off-by: Fabian Grünbichler <f.gruenbichler@proxmox.com>
  1 file changed, 11 insertions(+)
 
 diff --git a/grub-core/fs/xfs.c b/grub-core/fs/xfs.c
-index 8f3f4e3..4be90de 100644
+index 03656c2..2a4c74d 100644
 --- a/grub-core/fs/xfs.c
 +++ b/grub-core/fs/xfs.c
-@@ -569,6 +569,17 @@ grub_xfs_read_block (grub_fshelp_node_t node, grub_disk_addr_t fileblock)
+@@ -575,6 +575,17 @@ grub_xfs_read_block (grub_fshelp_node_t node, grub_disk_addr_t fileblock)
        do
          {
            int i;

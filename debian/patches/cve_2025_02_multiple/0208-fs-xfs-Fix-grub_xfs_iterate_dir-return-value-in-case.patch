@@ -14,18 +14,18 @@ in grub_xfs_read_inode().
 Fixes: ef7850c757 (fs/xfs: Fix issues found while fuzzing the XFS filesystem)
 
 Signed-off-by: Egor Ignatov <egori@altlinux.org>
-FG: cherry-picked from grub-devel 20250123174415.1251915-2-egori@altlinux.org
-with adapted context
+Reviewed-by: Daniel Kiper <daniel.kiper@oracle.com>
+FG: cherry-picked from https://lore.kernel.org/grub-devel/20250123174415.1251915-1-egori@altlinux.org/
 Signed-off-by: Fabian Grünbichler <f.gruenbichler@proxmox.com>
 ---
- grub-core/fs/xfs.c | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
+ grub-core/fs/xfs.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
 
 diff --git a/grub-core/fs/xfs.c b/grub-core/fs/xfs.c
-index 366974c..e80a7b0 100644
+index 08bc66a..fdcb988 100644
 --- a/grub-core/fs/xfs.c
 +++ b/grub-core/fs/xfs.c
-@@ -839,7 +839,11 @@ grub_xfs_iterate_dir (grub_fshelp_node_t dir,
+@@ -846,7 +846,11 @@ grub_xfs_iterate_dir (grub_fshelp_node_t dir,
  	    grub_uint8_t c;
  
  	    if ((inopos + (smallino ? 4 : 8)) > (grub_uint8_t *) dir + grub_xfs_fshelp_size (dir->data))
@@ -38,16 +38,15 @@ index 366974c..e80a7b0 100644
  
  	    /* inopos might be unaligned.  */
  	    if (smallino)
-@@ -869,8 +873,10 @@ grub_xfs_iterate_dir (grub_fshelp_node_t dir,
- 	    de = grub_xfs_inline_next_de(dir->data, head, de);
+@@ -962,7 +966,10 @@ grub_xfs_iterate_dir (grub_fshelp_node_t dir,
  
- 	    if ((grub_uint8_t *) de >= (grub_uint8_t *) dir + grub_xfs_fshelp_size (dir->data))
--	      return grub_error (GRUB_ERR_BAD_FS, "invalid XFS directory entry");
--
-+	      {
-+		grub_error (GRUB_ERR_BAD_FS, "invalid XFS directory entry");
-+		return 0;
-+	      }
- 	  }
- 	break;
-       }
+ 		filename = (char *)(direntry + 1);
+ 		if (filename + direntry->len + 1 > (char *) end)
+-		  return grub_error (GRUB_ERR_BAD_FS, "invalid XFS directory entry");
++		  {
++		    grub_error (GRUB_ERR_BAD_FS, "invalid XFS directory entry");
++		    return 0;
++		  }
+ 
+ 		/* The byte after the filename is for the filetype, padding, or
+ 		   tag, which is not used by GRUB.  So it can be overwritten. */
