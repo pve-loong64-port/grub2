@@ -142,10 +142,6 @@ cve_2025_02_multiple/0141-fs-jfs-Fix-OOB-read-caused-by-invalid-dir-slot-index.p
 cve_2025_02_multiple/0142-fs-jfs-Use-full-40-bits-offset-and-address-for-a-dat.patch
 cve_2025_02_multiple/0143-fs-jfs-Inconsistent-signed-unsigned-types-usage-in-r.patch
 cve_2025_02_multiple/0144-fs-ext2-Fix-out-of-bounds-read-for-inline-extents.patch
-cve_2025_02_multiple/0145-fs-ntfs-Fix-out-of-bounds-read.patch
-cve_2025_02_multiple/0146-fs-ntfs-Track-the-end-of-the-MFT-attribute-buffer.patch
-cve_2025_02_multiple/0147-fs-ntfs-Use-a-helper-function-to-access-attributes.patch
-cve_2025_02_multiple/0148-fs-ntfs-Implement-attribute-verification.patch
 cve_2025_02_multiple/0149-fs-xfs-Fix-issues-found-while-fuzzing-the-XFS-filesy.patch
 cve_2025_02_multiple/0150-fs-xfs-Incorrect-short-form-directory-data-boundary-.patch
 cve_2025_02_multiple/0151-fs-xfs-Fix-XFS-directory-extent-parsing.patch

@@ -246,10 +246,10 @@ index 3c248a9..c44583e 100644
    my_mod = mod;
  }
 diff --git a/grub-core/fs/ntfs.c b/grub-core/fs/ntfs.c
-index 35e6c30..4126c63 100644
+index deb058a..0ffcc9c 100644
 --- a/grub-core/fs/ntfs.c
 +++ b/grub-core/fs/ntfs.c
-@@ -1539,6 +1539,7 @@ static struct grub_fs grub_ntfs_fs =
+@@ -1316,6 +1316,7 @@ static struct grub_fs grub_ntfs_fs =
  
  GRUB_MOD_INIT (ntfs)
  {

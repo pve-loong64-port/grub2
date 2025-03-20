@@ -15,10 +15,10 @@ Reviewed-by: Daniel Kiper <daniel.kiper@oracle.com>
  3 files changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/grub-core/fs/ntfs.c b/grub-core/fs/ntfs.c
-index b1884ac..ec99331 100644
+index 66ea467..542b01e 100644
 --- a/grub-core/fs/ntfs.c
 +++ b/grub-core/fs/ntfs.c
-@@ -576,7 +576,7 @@ retry:
+@@ -364,7 +364,7 @@ retry:
  	      goto retry;
  	    }
  	}
