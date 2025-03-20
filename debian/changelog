@@ -1,8 +1,14 @@
+grub2 (2.06-13+pmx6) bookworm; urgency=medium
+
+  * revert broken NTFS patches
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 20 Mar 2025 11:55:27 +0100
+
 grub2 (2.06-13+pmx5) bookworm; urgency=medium
 
   * xfs: add regression fixes from upstream
 
- -- Fabian Grünbichler <debian@fabian.gruenbichler.email>  Wed, 26 Feb 2025 11:29:07 +0100
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 26 Feb 2025 11:29:07 +0100
 
 grub2 (2.06-13+pmx4) bookworm; urgency=medium
 
