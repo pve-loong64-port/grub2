@@ -1,0 +1,62 @@
+Description: allow building signed ISO via mkrescue
+Author: Proxmox Support Team <support@proxmox.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout https://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: (upstream|backport|vendor|other), (<patch-url>|commit:<commit-id>)
+Bug: <upstream-bugtracker-url>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: (no|not-needed|<patch-forwarded-url>)
+Applied-Upstream: <version>, (<commit-url>|commit:<commid-id>)
+Reviewed-By: <name and email of someone who approved/reviewed the patch>
+Last-Update: 2023-11-21
+
+--- grub2-2.06.orig/util/grub-mkrescue.c
++++ grub2-2.06/util/grub-mkrescue.c
+@@ -807,6 +807,33 @@ main (int argc, char *argv[])
+       else if (source_dirs[GRUB_INSTALL_PLATFORM_I386_EFI])
+ 	grub_install_copy_file (img32, img_mac, 1);
+ 
++     // PROXMOX EDIT START
++     if (getenv("PROXMOX_CD_BUILDER_SHIM_QUIRK") && source_dirs[GRUB_INSTALL_PLATFORM_X86_64_EFI]) {
++         grub_util_info ("======\nNOTE: found PROXMOX_CD_BUILDER_SHIM_QUIRK in environment, enabling quirk!\n======");
++         // /usr/lib/shim/shimx64.efi.signed -> efidir_efi_boot/BOOTx64.EFI
++         // /usr/lib/grub/x86_64-efi-signed/grubx64.efi.signed -> efidir_efi_boot/grubx64.efi
++        const char *signed_shim_source = "/usr/lib/shim/shimx64.efi.signed";
++        const char *signed_shim_target = xasprintf("%s/bootx64.efi", efidir_efi_boot);
++
++        const char *signed_grub_source = "/usr/lib/grub/x86_64-efi-signed/grubx64.efi.signed";
++        const char *signed_grub_target = xasprintf("%s/grubx64.efi", efidir_efi_boot);
++
++        const char *load_cfg = xasprintf("%s/grub.cfg", efidir_efi_boot);
++        FILE *load_cfg_f = grub_util_fopen (load_cfg, "wb");
++        fprintf (load_cfg_f, "search --fs-uuid --set=root %s\n", iso_uuid);
++        fprintf (load_cfg_f, "set prefix=(${root})/boot/grub\n");
++        fprintf (load_cfg_f, "source ${prefix}/grub.cfg\n");
++        write_part (load_cfg_f, source_dirs[GRUB_INSTALL_PLATFORM_X86_64_EFI]);
++        fclose (load_cfg_f);
++
++        rv = grub_util_exec ((const char * []) { "cp", signed_shim_source, signed_shim_target, NULL });
++        if (rv != 0) grub_util_error ("`%s` invocation failed\n", "cp");
++
++        rv = grub_util_exec ((const char * []) { "cp", signed_grub_source, signed_grub_target, NULL });
++        if (rv != 0) grub_util_error ("`%s` invocation failed\n", "cp");
++     }
++     // PROXMOX EDIT END
++
+       free (img_mac);
+       free (img32);
+       free (img64);
+@@ -843,7 +843,7 @@ main (int argc, char *argv[])
+       free (efidir_efi_boot);
+ 
+       efiimgfat = grub_util_path_concat (2, iso9660_dir, "efi.img");
+-      rv = grub_util_exec ((const char * []) { "mformat", "-C", "-f", "2880", "-L", "16", "-i",
++      rv = grub_util_exec ((const char * []) { "mformat", "-C", "-T", "16384", "-L", "16", "-i",
+ 	    efiimgfat, "::", NULL });
+       if (rv != 0)
+ 	grub_util_error ("`%s` invocation failed\n", "mformat");
