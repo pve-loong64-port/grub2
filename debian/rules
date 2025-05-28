@@ -156,7 +156,7 @@ endif
 # to create the monolithic Grub image and thus is needed to create the partitions on the EFI
 # media. Add it to the control file user metadata: XB-Efi-Vendor: $vendor
 DPKG_VENDOR ?= $(shell dpkg-vendor --query vendor)
-SB_EFI_VENDOR ?= $(shell dpkg-vendor --query vendor | tr '[:upper:]' '[:lower:]')
+SB_EFI_VENDOR ?= proxmox
 
 %:
 	dh $@ --with=bash_completion
