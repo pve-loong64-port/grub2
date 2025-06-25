@@ -31,7 +31,7 @@ Last-Update: 2020-08-20
  1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/util/grub.d/10_linux.in b/util/grub.d/10_linux.in
-index 4adb51d..a29f705 100644
+index 0cea76b..041521c 100644
 --- a/util/grub.d/10_linux.in
 +++ b/util/grub.d/10_linux.in
 @@ -262,7 +262,9 @@ else

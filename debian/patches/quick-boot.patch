@@ -257,7 +257,7 @@ index 6a316a5..f3e04cc 100644
  EOF
  }
 diff --git a/util/grub.d/10_linux.in b/util/grub.d/10_linux.in
-index 887355d..aa6c1ac 100644
+index e04a823..1ee9fd7 100644
 --- a/util/grub.d/10_linux.in
 +++ b/util/grub.d/10_linux.in
 @@ -22,6 +22,7 @@ exec_prefix="@exec_prefix@"

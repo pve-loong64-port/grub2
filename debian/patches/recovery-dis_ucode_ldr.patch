@@ -16,7 +16,7 @@ LP: #1831789
  1 file changed, 4 insertions(+)
 
 diff --git a/util/grub.d/10_linux.in b/util/grub.d/10_linux.in
-index 260e857..4adb51d 100644
+index b3cddc3..0cea76b 100644
 --- a/util/grub.d/10_linux.in
 +++ b/util/grub.d/10_linux.in
 @@ -228,6 +228,10 @@ case "$machine" in
