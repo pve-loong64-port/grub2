@@ -29,7 +29,7 @@ Last-Update: 2023-11-21
 +        const char *signed_shim_source = "/usr/lib/shim/shimx64.efi.signed";
 +        const char *signed_shim_target = xasprintf("%s/bootx64.efi", efidir_efi_boot);
 +
-+        const char *signed_grub_source = "/usr/lib/grub/x86_64-efi-signed/grubx64.efi.signed";
++        const char *signed_grub_source = "/usr/lib/grub/x86_64-efi-signed/gcdx64.efi.signed";
 +        const char *signed_grub_target = xasprintf("%s/grubx64.efi", efidir_efi_boot);
 +
 +        const char *load_cfg = xasprintf("%s/grub.cfg", efidir_efi_boot);
