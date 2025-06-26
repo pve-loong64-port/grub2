@@ -1,3 +1,9 @@
+grub2 (2.12-8+pmx2) trixie; urgency=medium
+
+  * mkrescue: use gcdx64.efi when creating artefacts for Proxmox ISO.
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 26 Jun 2025 14:44:22 +0200
+
 grub2 (2.12-8+pmx1) trixie; urgency=medium
 
   * Rebuild for Debian Trixie / Proxmox
