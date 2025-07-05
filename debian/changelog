@@ -1,3 +1,10 @@
+grub2 (2.12-9) unstable; urgency=medium
+
+  * Apply patch by Ben Hutchings to not strip .exec or .image files
+    (Closes: #1072167)
+
+ -- Felix Zielcke <fzielcke@z-51.de>  Thu, 03 Jul 2025 18:35:51 +0200
+
 grub2 (2.12-8+pmx2) trixie; urgency=medium
 
   * mkrescue: use gcdx64.efi when creating artefacts for Proxmox ISO.
