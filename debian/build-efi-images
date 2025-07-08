@@ -151,7 +151,6 @@ CD_MODULES="
 	memdisk
 	minicmd
 	normal
-	ntfs
 	part_apple
 	part_msdos
 	part_gpt
