@@ -1,3 +1,9 @@
+grub2 (2.06-13+pmx7) bookworm; urgency=medium
+
+  * monolithic efi images: remove ntfs and bump proxmox SBAT level to 2
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 08 Jul 2025 13:03:38 +0200
+
 grub2 (2.06-13+pmx6) bookworm; urgency=medium
 
   * revert broken NTFS patches
