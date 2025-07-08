@@ -1,6 +1,12 @@
+grub2 (2.12-9+pmx2) trixie; urgency=medium
+
+  * no-change bump of grub.proxmox SBAT level to 2
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 08 Jul 2025 15:19:48 +0200
+
 grub2 (2.12-9+pmx1) trixie; urgency=medium
 
-  * Rebuild for Debian 12 "Trixie" based Proxmox projects.
+  * Rebuild for Debian 13 "Trixie" based Proxmox projects.
 
  -- Proxmox Support Team <support@proxmox.com>  Sat, 05 Jul 2025 15:58:37 +0200
 
