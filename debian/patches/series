@@ -146,3 +146,4 @@ cve-2025-jan/fs-xfs-Propagate-incorrect-inode-error-from-grub_xfs_read.patch
 cve-2025-jan/fs-xfs-Handle-root-inode-read-failure-in-grub_xfs_mount.patch
 proxmox-mkrescue-install-signed-shim.patch
 util-grub-mkrescue-use-capitalised-paths-for-removab.patch
+loongarch64-able-to-start-on-legacy-firmware.patch
